@@ -37,3 +37,9 @@ L'objectif de ce projet académique était de répondre à une problématique r�
 
 <img width="953" height="443" alt="ahraz" src="https://github.com/user-attachments/assets/7c899fd7-1577-4b31-b927-6e08215ca0ba" />
 
+
+##  Auteur
+
+Projet réalisé dans le cadre académique — Module startup  
+**MEDANI Imene** — UMMTO
+
