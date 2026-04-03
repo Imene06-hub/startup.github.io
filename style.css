@@ -1,0 +1,306 @@
+:root {
+    --bg-cream: #f0e2ca;
+    --dark-blue: #243b45;
+    --deep-red: #4a0e0e;
+    --text-light: #f3e5c9;
+    --text-dark: #1a2a33;
+    --another:#e2dacc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--another);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--bg-cream);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-weight: 900; font-size: 1.5rem; color: var(--text-dark); }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 1.2 rem;
+}
+
+/* Section Hero (Bleu Nuit) */
+.hero {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    min-height: 70vh;
+    gap: 50px;
+}
+
+.hero-content { flex: 1; }
+.hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin: 15px 0; }
+.hero-content h1 span { font-style: italic; font-weight: 300; }
+.hero-content .subtitle { letter-spacing: 3px; font-size: 0.8rem; opacity: 0.8; }
+.hero-content .description { max-width: 500px; margin-bottom: 40px; opacity: 0.9; }
+
+.hero-image { flex: 1; display: flex; justify-content: center; }
+.hero-image img { 
+    max-width: 100%; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Boutons */
+.cta-light {
+    background-color: var(--text-light);
+    color: var(--deep-red);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-dark {
+    background-color: var(--deep-red);
+    color:white;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Features */
+.features {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.features h2 { font-size: 2.5rem; margin-bottom: 50px; }
+
+.features-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 40px;
+    border-radius: 15px;
+    flex: 1;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover { transform: translateY(-10px); }
+.feature-card h3 { color: var(--deep-red); margin-bottom: 15px; }
+
+/* CTA Final */
+.cta-final {
+    text-align: center;
+    padding: 100px 8%;
+    background: linear-gradient(to bottom, var(--bg-cream), #dfc695);
+}
+
+.cta-final h2 { font-size: 3rem; margin-bottom: 10px; }
+
+/* Footer */
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 8%;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.main-footer a { color: var(--text-dark); text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero { flex-direction: column; text-align: center; }
+    .features-grid { flex-direction: column; }
+}
+/* --- PAGE CONTACT PREMIUM --- */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: var(--bg-cream);
+}
+
+.contact-box {
+    background: #fffdf9;
+    max-width: 550px;
+    width: 100%;
+    padding: 60px;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+}
+
+/* Titres */
+.contact-box h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+.section-label {
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--taupe);
+    margin-bottom: 10px;
+}
+
+/* Style des cases (Inputs) */
+.contact-box .form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.contact-box label {
+    display: block;
+    margin-left: 25px; /* Aligné avec le début du texte dans l'arrondi */
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-blue);
+}
+
+.contact-box input[type="text"], 
+.contact-box input[type="email"] {
+    width: 100%;
+    padding: 15px 20px; /* Très haut et large comme sur l'image */
+    border-radius: 60px; /* Arrondi total "pilule" */
+    border: 1.5px solid #eee;
+    background-color: #ffffff;
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.contact-box textarea {
+    width: 100%;
+    padding: 25px 35px;
+    border-radius: 30px; /* Moins arrondi pour le bloc message */
+    border: 1.5px solid #eee;
+    background-color: #ffffff;
+    font-size: 1.05rem;
+    font-family: inherit;
+    resize: none;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus : quand on clique dans la case */
+.contact-box input:focus, 
+.contact-box textarea:focus {
+    border-color: var(--taupe);
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+}
+
+/* Bouton Envoyer */
+.btn-contact {
+    width: 100%;
+    background-color: var(--deep-red);
+    color: white;
+    padding: 22px;
+    border: none;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+   
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px);
+    background-color: var(--deep-red);
+}
+/* --- STYLE UNIFORME POUR TOUS LES BOUTONS --- */
+
+/* Style de base (État repos) */
+.cta-light, .cta-dark, .btn-valider, .btn-submit, .btn-contact {
+    display: inline-block;
+    cursor: pointer; /* Force l'apparition de la main au survol */
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animation fluide */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Effet au survol (Hover) */
+.cta-light:hover, .cta-dark:hover, .btn-valider:hover, .btn-submit:hover, .btn-contact:hover {
+    transform: translateY(-3px); /* Le bouton monte légèrement */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* L'ombre s'agrandit */
+    filter: brightness(1.1); /* Le bouton s'éclaire légèrement */
+}
+
+/* Effet au clic (Active) */
+.cta-light:active, .cta-dark:active, .btn-valider:active, .btn-submit:active, .btn-contact:active {
+    transform: translateY(-1px); /* Le bouton redescend un peu */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- EFFET HOVER SUR LE MENU DE NAVIGATION --- */
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 600;
+    margin-left: 25px;
+    position: relative; /* Nécessaire pour l'animation de la barre */
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+/* Changement de couleur au survol */
+.nav-links a:hover {
+    color: var(--dark-blue); /* Le lien devient bordeaux au survol */
+}
+
+/* Création de la petite barre animée sous le lien */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark-blue);
+    transition: width 0.3s ease; /* Animation de la gauche vers la droite */
+}
+
+/* La barre s'allonge au survol */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Style pour la page active (celle où l'on se trouve) */
+.nav-links a.active {
+    color: var(--dark-blue);
+}
+
+.nav-links a.active::after {
+    width: 100%; /* La barre reste pleine sur la page active */
+}
