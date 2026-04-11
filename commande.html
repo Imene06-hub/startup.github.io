@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahraz Connect | Commander</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="panier.css">
+    <link rel="stylesheet" href="commande.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">Ahraz Connect</div>
+        <nav class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="commande.html" class="active">Commander</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <div class="cart-content">
+            <div class="image-section">
+                <div class="image-card">
+                    <img src="A3ADACE4-EFD0-4DF3-A42B-4DF3DDB3B26A.jpg" alt="Bracelet Ahraz">
+
+                    <div class="summary-card">
+                        <div class="summary-line">
+                            <span>Livraison</span>
+                            <span><span id="frais-livraison">--</span> DA</span>
+                        </div>
+                        <div id="erreur-livraison" style="color: red; font-size: 0.8em; display: none;">Stop Desk non
+                            disponible pour cette Wilaya</div>
+                        <hr>
+                        <div class="summary-line total">
+                            <span>Total à régler</span>
+                            <span><span id="total-amount">6000</span> DA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1>COMMANDE</h1>
+
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSe4d6qlDgtpjzhx-ljMjBHsc2md76LBXKfjsmADRe2UYUoghg/formResponse"
+                    method="POST">
+
+                    <div class="form-group">
+                        <label>Quantité souhaitée</label>
+                        <select name="entry.661398390" id="qty-select" required>
+                            <option value="1 pièce">1 pièce</option>
+                            <option value="2 pièces">2 pièces</option>
+                            <option value="3 pièces">3 pièces</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nom et Prénom</label>
+                        <input type="text" name="entry.1364527642" placeholder="Votre nom complet" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mode de livraison</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="entry.1391177222" value="A domicile" checked>
+                                À domicile
+                            </label>
+                            <label>
+                                <input type="radio" name="entry.1391177222" value="Au bureau (Stop Desk)">
+                                Au bureau (Stop Desk)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="wilaya-group">
+                        <label>Wilaya</label>
+                        <select id="wilaya-select" name="entry.23668569">
+                            <option value="">Sélectionnez votre wilaya</option>
+                            <option value="01-Adrar">01 - Adrar</option>
+                            <option value="02-Chlef">02 - Chlef</option>
+                            <option value="03-Laghouat">03 - Laghouat</option>
+                            <option value="04-Oum El Bouaghi">04 - Oum El Bouaghi</option>
+                            <option value="05-Batna">05 - Batna</option>
+                            <option value="06-Béjaia">06 - Béjaïa</option>
+                            <option value="07-Biskra">07 - Biskra</option>
+                            <option value="08-Béchar">08 - Béchar</option>
+                            <option value="09-Blida">09 - Blida</option>
+                            <option value="10-Bouira">10 - Bouira</option>
+                            <option value="11-Tamanrasset">11 - Tamanrasset</option>
+                            <option value="12-Tébessa">12 - Tébessa</option>
+                            <option value="13-Tlemcen">13 - Tlemcen</option>
+                            <option value="14-Tiaret">14 - Tiaret</option>
+                            <option value="15-Tizi Ouzou">15 - Tizi Ouzou</option>
+                            <option value="16-Alger">16 - Alger</option>
+                            <option value="17-Djelfa">17 - Djelfa</option>
+                            <option value="18-Jijel">18 - Jijel</option>
+                            <option value="19-Sétif">19 - Sétif</option>
+                            <option value="20-Saida">20 - Saïda</option>
+                            <option value="21-Skikda">21 - Skikda</option>
+                            <option value="22-Sidi Bel Abbès">22 - Sidi Bel Abbès</option>
+                            <option value="23-Annaba">23 - Annaba</option>
+                            <option value="24-Guelma">24 - Guelma</option>
+                            <option value="25-Canstantine">25 - Constantine</option>
+                            <option value="26-Médéa">26 - Médéa</option>
+                            <option value="27-Mostaganem">27 - Mostaganem</option>
+                            <option value="28-M'Sila">28 - M'Sila</option>
+                            <option value="29-Mascara">29 - Mascara</option>
+                            <option value="30-Ouargla">30 - Ouargla</option>
+                            <option value="31-Oran">31 - Oran</option>
+                            <option value="32-El Bayadh">32 - El Bayadh</option>
+                            <option value="33-Illizi">33 - Illizi</option>
+                            <option value="34-Bordj Bou Arreridj">34 - Bordj Bou Arreridj</option>
+                            <option value="35-Boumerdès">35 - Boumerdès</option>
+                            <option value="36-El Tarf">36 - El Tarf</option>
+                            <option value="37-Tindouf">37 - Tindouf</option>
+                            <option value="38-Tissemsilt">38 - Tissemsilt</option>
+                            <option value="39-El Oued">39 - El Oued</option>
+                            <option value="40-Khenchela">40 - Khenchela</option>
+                            <option value="41-Souk Ahras">41 - Souk Ahras</option>
+                            <option value="42-Tipaza">42 - Tipaza</option>
+                            <option value="43-Mila">43 - Mila</option>
+                            <option value="44-Aïn Defla">44 - Aïn Defla</option>
+                            <option value="45-Naâma">45 - Naâma</option>
+                            <option value="46-Aïn Témouchent">46 - Aïn Témouchent</option>
+                            <option value="47-Ghardaia">47 - Ghardaïa</option>
+                            <option value="48-Relizane">48 - Relizane</option>
+                            <option value="49-Timimoun">49 - Timimoun</option>
+                            <option value="50-Bordj Badji Mokhtar">50 - Bordj Badji Mokhtar</option>
+                            <option value="51-Ouled Djellal">51 - Ouled Djellal</option>
+                            <option value="52-Béni Abbès">52 - Béni Abbès</option>
+                            <option value="53-In Salah">53 - In Salah</option>
+                            <option value="54-In Guezzam">54 - In Guezzam</option>
+                            <option value="55-Touggourt">55 - Touggourt</option>
+                            <option value="56-Djanet">56 - Djanet</option>
+                            <option value="57-El M'Ghair">57 - El M'Ghair</option>
+                            <option value="58-El Meniaa">58 - El Meniaa</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="address-exacte-group">
+                        <label>Adresse de livraison exacte</label>
+                        <input type="text" id="adresse-exacte-input" name="entry.920656119"
+                            placeholder="Cité, Rue, Commune" required>
+                    </div>
+
+
+
+                    <h2 class="form-section-title">Informations de Paiement</h2>
+
+                    <div class="form-group">
+                        <label>Numéro de carte Edahabia / CIB</label>
+                        <input type="text" name="entry.823093172" placeholder="0000 0000 0000 0000" maxlength="19"
+                            required>
+                    </div>
+
+                    <div class="flex-row">
+                        <div class="form-group flex-1">
+                            <label>Expiration</label>
+                            <input type="month" name="entry.664970687" min="2026-03" required>
+                        </div>
+                        <div class="form-group flex-1">
+                            <label>CCV</label>
+                            <input type="text" name="entry.1333153020" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-valider">
+                        Confirmer la commande • <span id="btn-total">6000</span> DA
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 1. Base de données des tarifs de livraison (selon ton image)
+        const tarifsLivraison = {
+            31: { domicile: 500, bureau: 250 },
+            27: { domicile: 700, bureau: 300 },
+            16: { domicile: 700, bureau: 300 },
+            46: { domicile: 800, bureau: 300 },
+            44: { domicile: 800, bureau: 350 },
+            5: { domicile: 800, bureau: 350 },
+            6: { domicile: 800, bureau: 350 },
+            9: { domicile: 800, bureau: 350 },
+            34: { domicile: 800, bureau: 350 },
+            10: { domicile: 800, bureau: 350 },
+            35: { domicile: 800, bureau: 350 },
+            2: { domicile: 800, bureau: 350 },
+            26: { domicile: 800, bureau: 350 },
+            43: { domicile: 800, bureau: null }, // Mila
+            21: { domicile: 800, bureau: 350 },
+            28: { domicile: 800, bureau: 350 },
+            25: { domicile: 800, bureau: 350 },
+            4: { domicile: 800, bureau: 350 },
+            19: { domicile: 800, bureau: 350 },
+            42: { domicile: 800, bureau: 350 },
+            15: { domicile: 800, bureau: 350 },
+            29: { domicile: 800, bureau: 350 },
+            48: { domicile: 800, bureau: null }, // Relizane
+            22: { domicile: 800, bureau: 350 },
+            20: { domicile: 800, bureau: 350 },
+            14: { domicile: 800, bureau: 350 },
+            13: { domicile: 800, bureau: 350 },
+            23: { domicile: 800, bureau: 350 },
+            18: { domicile: 800, bureau: 350 },
+            38: { domicile: 800, bureau: null }, // Tissemsilt
+            40: { domicile: 850, bureau: 350 },
+            36: { domicile: 900, bureau: null }, // El Tarf
+            24: { domicile: 900, bureau: 400 },
+            41: { domicile: 900, bureau: null }, // Souk Ahrass
+            12: { domicile: 900, bureau: 400 },
+            7: { domicile: 1000, bureau: 500 },
+            51: { domicile: 1000, bureau: null }, // Ouled Djellal
+            17: { domicile: 1000, bureau: 500 },
+            3: { domicile: 1000, bureau: 500 },
+            39: { domicile: 1100, bureau: null }, // El Oued
+            57: { domicile: 1100, bureau: null }, // El M'ghair
+            47: { domicile: 1100, bureau: 500 },
+            58: { domicile: 1100, bureau: null }, // El Meniaa
+            30: { domicile: 1100, bureau: 500 },
+            55: { domicile: 1100, bureau: 500 },
+            8: { domicile: 1200, bureau: 600 },
+            52: { domicile: 1200, bureau: null }, // Beni Abbes
+            32: { domicile: 1200, bureau: null }, // El Bayadh
+            45: { domicile: 1200, bureau: 600 },
+            1: { domicile: 1500, bureau: 750 },
+            49: { domicile: 1500, bureau: null }, // Timimoun
+            37: { domicile: 1500, bureau: null }, // Tindouf
+            53: { domicile: 1850, bureau: null }, // In Salah
+            11: { domicile: 2000, bureau: 1000 },
+            33: { domicile: 2000, bureau: null }  // Illizi
+        };
+
+        // 2. Récupération de tous les éléments du HTML
+        const qtySelect = document.getElementById('qty-select');
+        const totalAmount = document.getElementById('total-amount');
+        const btnTotal = document.getElementById('btn-total');
+        const wilayaSelect = document.getElementById('wilaya-select');
+        const radioDomicile = document.querySelector('input[value="A domicile"]');
+        const radioBureau = document.querySelector('input[value="Au bureau (Stop Desk)"]');
+        const addressExacteGroup = document.getElementById('address-exacte-group');
+        const adresseExacteInput = document.getElementById('adresse-exacte-input');
+        const affichageFraisLivraison = document.getElementById('frais-livraison');
+        const erreurLivraison = document.getElementById('erreur-livraison');
+        const btnValider = document.querySelector('.btn-valider');
+
+        // Prix d'une seule pièce de ton produit
+        const PRIX_UNITAIRE_PRODUIT = 7000;
+
+        // 3. Fonction Moteur : elle calcule tout dès que l'utilisateur clique/change un champ
+        function updateOrderDetails() {
+            // A. Calcul de base du produit (Quantité * 7000 DA)
+            const qty = parseInt(qtySelect.value) || 1;
+            const totalProduits = qty * PRIX_UNITAIRE_PRODUIT;
+
+            // B. Vérifier le mode de livraison choisi
+            const modeLivraison = radioDomicile.checked ? 'domicile' : 'bureau';
+
+            // Afficher ou cacher l'adresse exacte selon le choix
+            if (modeLivraison === 'domicile') {
+                addressExacteGroup.style.display = 'block';
+                adresseExacteInput.required = true;
+            } else {
+                addressExacteGroup.style.display = 'none';
+                adresseExacteInput.required = false;
+                adresseExacteInput.value = "";
+            }
+
+            // C. Calcul des frais de livraison
+            let prixLivraison = 0;
+            let stopDeskIndisponible = false;
+
+            // Si une wilaya a été choisie
+            if (wilayaSelect.value !== "") {
+                // Extraire le numéro (ex: "31 - Oran" devient le chiffre 31)
+                const codeWilaya = parseInt(wilayaSelect.value);
+                const tarifsWilaya = tarifsLivraison[codeWilaya];
+
+                if (tarifsWilaya) {
+                    prixLivraison = tarifsWilaya[modeLivraison];
+
+                    // Si le Stop Desk (bureau) est sélectionné mais vaut "null" dans la liste
+                    if (modeLivraison === 'bureau' && prixLivraison === null) {
+                        stopDeskIndisponible = true;
+                        prixLivraison = 0;
+                    }
+                } else {
+                    // Sécurité : prix par défaut si wilaya inconnue
+                    prixLivraison = (modeLivraison === 'domicile') ? 1000 : 500;
+                }
+            }
+
+            // D. Affichage du résultat final sur l'écran
+            if (stopDeskIndisponible) {
+                // Bloquer l'achat car Stop Desk indisponible
+                affichageFraisLivraison.textContent = "---";
+                erreurLivraison.style.display = "block";
+                btnValider.disabled = true;
+                btnValider.style.opacity = "0.5";
+                btnTotal.textContent = "---";
+                totalAmount.textContent = "---";
+            } else {
+                // Tout est bon, on affiche les calculs
+                erreurLivraison.style.display = "none";
+                btnValider.disabled = false;
+                btnValider.style.opacity = "1";
+
+                if (wilayaSelect.value === "") {
+                    // L'utilisateur n'a pas encore choisi sa wilaya
+                    affichageFraisLivraison.textContent = "--";
+                    totalAmount.textContent = totalProduits;
+                    btnTotal.textContent = totalProduits;
+                } else {
+                    // Addition finale : Prix Produits + Prix Livraison
+                    affichageFraisLivraison.textContent = prixLivraison;
+                    const prixFinal = totalProduits + prixLivraison;
+                    totalAmount.textContent = prixFinal;
+                    btnTotal.textContent = prixFinal;
+                }
+            }
+        }
+
+        // 4. Écouteurs d'évènements : on prévient le navigateur qu'il doit relancer le calcul si l'utilisateur touche à ces boutons
+        qtySelect.addEventListener('change', updateOrderDetails);
+        wilayaSelect.addEventListener('change', updateOrderDetails);
+        radioDomicile.addEventListener('change', updateOrderDetails);
+        radioBureau.addEventListener('change', updateOrderDetails);
+
+        // 5. Initialiser les bons montants au démarrage de la page
+        updateOrderDetails();
+        // --- FORMATAGE DU NUMÉRO DE CARTE ---
+        // On récupère le champ grâce à son attribut "name"
+        const cardNumberInput = document.querySelector('input[name="entry.823093172"]');
+
+        cardNumberInput.addEventListener('input', function (e) {
+            // 1. On supprime tout ce qui n'est pas un chiffre (lettres, symboles, anciens espaces)
+            let value = e.target.value.replace(/\D/g, '');
+
+            // 2. On bloque la longueur à 16 chiffres maximum (au cas où)
+            if (value.length > 16) {
+                value = value.substring(0, 16);
+            }
+
+            // 3. On ajoute un espace tous les 4 chiffres
+            // Le .trim() empêche d'avoir un espace inutile à la toute fin
+            let formattedValue = value.replace(/(.{4})/g, '$1 ').trim();
+
+            // 4. On remplace le texte du champ par la version formatée
+            e.target.value = formattedValue;
+        });
+    </script>
+</body>
+
+</html>

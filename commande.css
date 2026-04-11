@@ -1,0 +1,250 @@
+/* Importation des polices depuis le CSS pour ne pas toucher au HTML */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* Variables des couleurs extraites de vos images */
+:root {
+    --bg-page: #eadecd; /* Beige de fond de la page */
+    --bg-white: #fdfaf5; /* Blanc cassé pour l'encart image */
+    --bg-input: #f4e9de; /* Beige clair pour les champs de saisie et récapitulatif */
+    --text-dark: #1b2834; /* Bleu anthracite / gris très foncé */
+    --text-muted: #6b7a85; /* Gris bleuté pour les textes secondaires */
+    --btn-color: #4a0e0e ;  /* Marron/rosé du bouton */
+    --btn-hover: #7a5e57;
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Nunito', sans-serif;
+}
+
+/* Réinitialisation de base */
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-left: 25px;
+    font-size: 1.2 rem;
+    transition: color 0.3s;
+}
+
+.nav-links a.active, 
+.nav-links a:hover {
+    color: var(--text-dark);
+}
+
+/* --- Structure globale --- */
+.cart-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.cart-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* --- Colonne de gauche (Image & Résumé dans votre HTML d'origine) --- */
+.image-section {
+    flex: 1;
+    position: sticky;
+    top: 40px;
+}
+
+.image-card {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.image-card img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Stylisation du récapitulatif (qui se trouve sous l'image dans votre code) */
+.summary-card {
+    background-color: var(--bg-input);
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.summary-line span:last-child {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.summary-card hr {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 15px 0;
+}
+
+.summary-line.total {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 5px;
+}
+
+/* --- Colonne de droite (Formulaire) --- */
+.form-section {
+    flex: 1.2;
+    padding-bottom: 50px;
+}
+
+/* Titres */
+.form-section h1 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-transform: none; /* Annule le uppercase de l'ancien code */
+    margin-top: 0;
+}
+
+.form-section-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-dark);
+    text-transform: none;
+    letter-spacing: normal;
+    margin: 40px 0 20px 0;
+    border-bottom: none; /* Enlève la ligne de votre ancien code */
+    padding-bottom: 0;
+}
+
+/* Champs de formulaire */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: var(--bg-input);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-dark);
+    outline: none;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #a3b0b8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--btn-color);
+}
+
+/* Mise en ligne Expiration / CCV */
+.flex-row {
+    display: flex;
+    gap: 20px; /* Réduit pour un meilleur rendu visuel */
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* --- Bouton Valider --- */
+.btn-valider {
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px;
+    background-color: var(--btn-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-valider:hover {
+    background-color: var(--btn-color);
+    /* Retrait de l'animation de translation pour correspondre au style sobre */
+}
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+    .cart-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .image-section {
+        position: static;
+        width: 100%;
+    }
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+}
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: flex;
+    align-items:center;
+    gap: 8px;
+    cursor: pointer;
+}
